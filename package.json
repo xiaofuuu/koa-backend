@@ -1,0 +1,19 @@
+{
+  "name": "koa-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/john-blessing/koa-backend.git",
+  "author": "john-blessing <1585185302@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "supervisor app.js"
+  },
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-body": "^2.5.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "request": "^2.86.0",
+    "supervisor": "^0.12.0"
+  }
+}
