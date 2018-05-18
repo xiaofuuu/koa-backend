@@ -23,7 +23,8 @@ wxC.getWxUserInfo = async function(ctx){
     }
 }
 
-wxC.getStudents = async function(ctx){
+// 查询学生
+wxC.findStudentById = async (ctx) => {
     let s_id = ctx.request.query.s_id;
 
     if(!s_id){
@@ -34,7 +35,12 @@ wxC.getStudents = async function(ctx){
         return false;
     }
 
-    let data = await sql('select s_name from classroom where s_id = ?', [s_id]).catch(error => { logger.error(error) })
+    let data = await sql('select * from classroom where s_id = ?', [s_id]).catch(error => { 
+        ctx.body = {
+            msg: error,
+            res_code: -1
+        }
+     })
 
     ctx.body = {
         msg: data.length == 1 ? data[0] : data,
