@@ -1,7 +1,10 @@
 const wxC = {}
 const rp = require('request-promise')
+const logger = require('../../logger')
 
 wxC.getWxUserInfo = async function(ctx){
+    logger.debug('hello world')
+
     let options = {
         method: 'GET',
         url: 'http://web.juhe.cn:8080/fund/suspend/purch',
