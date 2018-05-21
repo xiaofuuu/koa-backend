@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>测试页面</title>
     <script src="js/index.js"></script>
     <style>
-        body, p{
+        body,
+        p {
             margin: 0;
             padding: 0;
         }
-        .layout{
-    
-        }
-        .card-img{
+
+        .layout {}
+
+        .card-img {
             float: left;
 
             width: 100px;
             height: 66.81px;
         }
-        .card-img img{
+
+        .card-img img {
             width: 100%;
 
         }
-        .card-content{
+
+        .card-content {
             overflow: hidden;
             background: #eee;
 
             height: 66.81px;
-            padding-left: 20px;
             font-size: 16px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .card-content p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            -webkit-line-break: auto;
+            -webkit-box-orient: vertical;
         }
     </style>
 </head>
+
 <body>
     <div class="layout">
         <div class="card">
@@ -41,11 +55,11 @@
                 <img src="img/1.jpeg" alt="">
             </div>
             <div class="card-content">
-                <p>hello world</p>
-                <p>hello world</p>
-                <p>hello world</p>
+                <p>abbr. image 像; idiopathic membranous glomerulonephritis 特发性膜性肾小球肾炎; 特发性中线肉芽肿;
+                    international mailgram 国际邮政电报;</p>
             </div>
         </div>
     </div>
 </body>
+
 </html>
