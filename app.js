@@ -1,18 +1,26 @@
 const logger = require('koa-logger');
 const koaBody = require('koa-body');
-const router = require('./routes');
+const views = require('koa-views');
+const serve = require('koa-static');
+const path = require('path');
 const Koa = require('koa');
 const emoji = require('node-emoji')
 const app = module.exports = new Koa();
 
-// middleware
-app.use(logger());
+const router = require('./routes');
 
-app.use(koaBody());
+// middleware
+app.use(logger())
+
+app.use(koaBody())
+
+app.use(serve(__dirname + '/public'));
+// views
+app.use(views(path.resolve(__dirname, './views')))
 
 // route definitions
-app.use(router.routes());
+app.use(router.routes())
 
-app.listen(8999, function(){
+app.listen(8999, function () {
     console.log('Server is running ' + emoji.get('coffee') + '...');
 });
