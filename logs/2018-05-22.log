@@ -1,0 +1,344 @@
+[2018-05-22T18:37:00.114] [ERROR] default - { Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student(s_name,s_birth,s_score,c_id) values('tony', '2009-10-10', 70, 1)' at line 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'student(s_name,s_birth,s_score,c_id) values(\'tony\', \'2009-10-10\', 70, 1)\' at line 1',
+  sqlState: '42000',
+  index: 0,
+  sql: 'insert info student(s_name,s_birth,s_score,c_id) values(\'tony\', \'2009-10-10\', 70, 1)' }
+[2018-05-22T18:37:00.123] [DEBUG] default - undefined
+[2018-05-22T18:37:28.609] [DEBUG] default - OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 4,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '',
+  protocol41: true,
+  changedRows: 0 }
+[2018-05-22T18:54:04.641] [ERROR] default - { s_name: 'tony2',
+  s_birth: '2009-10-10',
+  s_score: 70,
+  c_id: 1,
+  c_name: '12' }
+[2018-05-22T18:54:28.122] [ERROR] default - { s_name: 'tony2',
+  s_birth: '2009-10-10',
+  s_score: 70,
+  c_id: 1,
+  c_name: '12' }
+[2018-05-22T19:02:31.323] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: '1313' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Ping.onOperationComplete [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Ping.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'1313\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'1313\', 70, 1)' }
+[2018-05-22T19:04:05.444] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: '1313' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'1313\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'1313\', 70, 1)' }
+[2018-05-22T19:05:06.416] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: '1313' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'1313\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'1313\', 70, 1)' }
+[2018-05-22T19:05:24.900] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: '1313' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'1313\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'1313\', 70, 1)' }
+[2018-05-22T19:05:42.041] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: 'fefe' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Ping.onOperationComplete [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Ping.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'fefe\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'fefe\', 70, 1)' }
+[2018-05-22T19:10:50.211] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: 'fefe' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'fefe\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'fefe\', 70, 1)' }
+[2018-05-22T19:11:28.262] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: 'fefe' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'fefe\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'fefe\', 70, 1)' }
+[2018-05-22T19:12:28.616] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: 'fefe' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'fefe\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'fefe\', 70, 1)' }
