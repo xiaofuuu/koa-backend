@@ -62,6 +62,15 @@ wxC.addStudent = async (ctx) => {
         return;
     }
 
+    if(isNaN(ctx.request.body.s_score) || isNaN(ctx.request.body.c_id)){
+        logger.error('Error s_score: ' + ctx.request.body.s_score + ' ---- ' + 'c_id: ' + ctx.request.body.c_id)
+        ctx.body = {
+            msg: '参数类型错误',
+            res_code: -1
+        }
+        return;
+    }
+
     let req_data = {
         s_name: ctx.request.body.s_name,
         s_birth: ctx.request.body.s_birth,

@@ -342,3 +342,6 @@
   sqlState: '22007',
   index: 0,
   sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'fefe\', 70, 1)' }
+[2018-05-22T19:27:00.338] [ERROR] default - fe----1
+[2018-05-22T19:27:57.080] [ERROR] default - s_score: fe ---- c_id: 1
+[2018-05-22T19:28:29.030] [ERROR] default - Error s_score: fe ---- c_id: 1
