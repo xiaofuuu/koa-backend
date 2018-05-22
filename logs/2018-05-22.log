@@ -345,3 +345,77 @@
 [2018-05-22T19:27:00.338] [ERROR] default - fe----1
 [2018-05-22T19:27:57.080] [ERROR] default - s_score: fe ---- c_id: 1
 [2018-05-22T19:28:29.030] [ERROR] default - Error s_score: fe ---- c_id: 1
+[2018-05-22T19:35:09.267] [ERROR] default - Error s_score: fe ---- c_id: 1
+[2018-05-22T19:35:10.828] [ERROR] default - Error s_score: fe ---- c_id: 1
+[2018-05-22T19:35:17.262] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: '333' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:21:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'333\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'333\', \'22\', 1)' }
+[2018-05-22T19:43:38.542] [ERROR] default - { Error: ER_TRUNCATED_WRONG_VALUE: Incorrect date value: '333' for column 's_birth' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlMessage: 'Incorrect date value: \'333\' for column \'s_birth\' at row 1',
+  sqlState: '22007',
+  index: 0,
+  sql: 'insert into student(s_name,s_birth,s_score,c_id) values(\'tony2\', \'333\', \'22\', 1)' }

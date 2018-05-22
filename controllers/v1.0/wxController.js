@@ -37,14 +37,16 @@ wxC.findStudentById = async (ctx) => {
 
     let data = await sql('select * from student where s_id = ?', [s_id]).catch(error => {
         ctx.body = {
-            msg: error,
-            res_code: -1
+            msg: '参数错误',
+            res_code: -200
         }
     })
-
-    ctx.body = {
-        msg: data.length == 1 ? data[0] : data,
-        res_code: 200
+    
+    if (data) {
+        ctx.body = {
+            msg: data.length == 1 ? data[0] : data,
+            res_code: 200
+        }
     }
 }
 
@@ -62,7 +64,7 @@ wxC.addStudent = async (ctx) => {
         return;
     }
 
-    if(isNaN(ctx.request.body.s_score) || isNaN(ctx.request.body.c_id)){
+    if (isNaN(ctx.request.body.s_score) || isNaN(ctx.request.body.c_id)) {
         logger.error('Error s_score: ' + ctx.request.body.s_score + ' ---- ' + 'c_id: ' + ctx.request.body.c_id)
         ctx.body = {
             msg: '参数类型错误',
@@ -80,8 +82,8 @@ wxC.addStudent = async (ctx) => {
 
     let data = await sql('insert into student(s_name,s_birth,s_score,c_id) values(?, ?, ?, ?)', [req_data.s_name, req_data.s_birth, req_data.s_score, req_data.c_id]).catch(error => {
         ctx.body = {
-            msg: '错误',
-            res_code: -1
+            msg: '参数错误',
+            res_code: -200
         }
     })
 
@@ -90,7 +92,7 @@ wxC.addStudent = async (ctx) => {
             msg: '添加成功',
             res_code: 200
         }
-    } 
+    }
 }
 
 module.exports = wxC;
