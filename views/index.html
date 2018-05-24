@@ -8,58 +8,114 @@
     <title>测试页面</title>
     <script src="js/index.js"></script>
     <style>
-        body,
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        .layout {}
-
-        .card-img {
-            float: left;
-
-            width: 100px;
-            height: 66.81px;
-        }
-
-        .card-img img {
-            width: 100%;
-
-        }
-
-        .card-content {
-            overflow: hidden;
-            background: #eee;
-
-            height: 66.81px;
-            font-size: 16px;
-            padding-left: 8px;
-            padding-right: 8px;
-        }
-
-        .card-content p {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            overflow: hidden;
-            -webkit-line-break: auto;
-            -webkit-box-orient: vertical;
-        }
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      .layout{
+        color: #000;
+        font-size: 16px;
+        padding: 10px;
+        box-sizing: border-box;
+        background: rgb(219,202,179);
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      .layout--article-content{
+        width: 100%;
+      }
+      .layout--page{
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        left: 0;
+        text-align: center;
+      }
     </style>
 </head>
 
 <body>
     <div class="layout">
-        <div class="card">
-            <div class="card-img">
-                <img src="img/1.jpeg" alt="">
-            </div>
-            <div class="card-content">
-                <p>abbr. image 像; idiopathic membranous glomerulonephritis 特发性膜性肾小球肾炎; 特发性中线肉芽肿;
-                    international mailgram 国际邮政电报;</p>
-            </div>
-        </div>
+      <div class="layout--article-content"></div>
+      <p class="layout--page"></p>
     </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var layout = $('.layout'), 
+            start_point, 
+            a_index = 1, 
+            article = $('.layout--article-content'),
+            page = $('.layout--page'),
+            screenWidth = $(window).width(),
+            articleNum = 3,
+            duration = 300
+
+            $(window).on('resize', function(){
+              screenWidth = $(window).width()
+            })
+
+            getArticle(1)
+
+            layout.on('touchstart', function(e){
+              start_point = e.originalEvent.targetTouches[0].pageX
+            })
+            
+            layout.on('touchend', function(e){
+              var end_point = e.originalEvent.changedTouches[0].pageX
+              if (start_point - end_point > 40) {
+                a_index ++
+                if(a_index < articleNum + 1){
+                  article.animate({
+                    marginLeft: - screenWidth + 'px'
+                  }, {
+                    duration: duration,
+                    complete: function () {
+                      article.css({"margin-left": screenWidth + 'px'})                
+                    }
+                  })
+                  getArticle(a_index)
+                } else {
+                  alert('已经是最后一页了～')
+                  a_index = articleNum                  
+                }
+              } else if(start_point - end_point < -40) {
+                a_index --
+                if(a_index > 0){
+                  article.animate({
+                    marginLeft: screenWidth + 'px'
+                  }, {
+                    duration: duration,
+                    complete: function () {
+                      article.css({"margin-left": - screenWidth + 'px'})                
+                    }
+                  })
+                  getArticle(a_index)
+                } else {
+                  a_index = 1                  
+                }
+              }
+            })
+
+            function getArticle (v) {
+              $.ajax({
+                url: `./${v}.txt`,
+              })
+              .done(function(data) {
+                article.html(data)
+                page.html(v)
+                article.animate({
+                  marginLeft: '0'
+                }, {
+                  duration: duration
+                })
+              });
+            }
+        })
+    </script>
 </body>
 
 </html>
