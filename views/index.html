@@ -20,7 +20,7 @@
         background: rgb(219,202,179);
         width: 100vw;
         height: 100vh;
-        overflow: hidden;
+        overflow: auto;
         position: relative;
       }
       .layout--article-content{
@@ -76,9 +76,9 @@
                     duration: duration,
                     complete: function () {
                       article.css({"margin-left": screenWidth + 'px'})                
+                      getArticle(a_index)
                     }
                   })
-                  getArticle(a_index)
                 } else {
                   alert('已经是最后一页了～')
                   a_index = articleNum                  
@@ -92,9 +92,9 @@
                     duration: duration,
                     complete: function () {
                       article.css({"margin-left": - screenWidth + 'px'})                
+                      getArticle(a_index)
                     }
                   })
-                  getArticle(a_index)
                 } else {
                   a_index = 1                  
                 }

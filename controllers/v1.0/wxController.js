@@ -1,25 +1,25 @@
 const wxC = {}
 const rp = require('request-promise')
+const request = require('request')
 const logger = require('../../logger')
 const sql = require('../../mysql-connect')
 
 wxC.getWxUserInfo = async function (ctx) {
-    logger.debug('hello world')
-
-    let options = {
-        method: 'GET',
-        url: 'http://web.juhe.cn:8080/fund/suspend/purch',
-        qs: {
-            key: '44a39b366980997da3ccd070a681c13b'
-        },
-        json: true
-    }
-
-    let data = await rp(options).catch(error => console.log(error));
-
-    ctx.body = {
-        msg: data,
-        res_code: 200
+    let data = await request({
+        method: 'get',
+        uri: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx8b3bc1df5196160a&secret=38d196bb42e0114c9feb668718fa61f1'
+    }, function (error, response, body) {
+        if (error) {
+            console.error('upload failed:');
+        }
+        return body
+    })
+    
+    if (data) {
+        ctx.body = {
+            msg: data,
+            res_code: 200
+        }
     }
 }
 
@@ -41,7 +41,7 @@ wxC.findStudentById = async (ctx) => {
             res_code: -200
         }
     })
-    
+
     if (data) {
         ctx.body = {
             msg: data.length == 1 ? data[0] : data,
