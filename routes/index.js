@@ -1,8 +1,9 @@
 const fs = require('fs');
 const os = require('os');
 
-const router = require('koa-router')();
-const wxC = require('../controllers/v1.0/wxController');
+const router = require('koa-router')()
+const wxC = require('../controllers/v1.0/wxController')
+const uB = require('../controllers/v1.0/userBackend')
 
 router.post('/api/v1.0/getWxUserInfo', wxC.getWxUserInfo)
 router.get('/api/v1.0/findStudentById', wxC.findStudentById)
@@ -11,6 +12,12 @@ router.post('/api/v1.0/saveArticleContent', wxC.saveArticleContent)
 router.get('/api/v1.0/findArticleById', wxC.findArticleById)
 router.put('/api/v1.0/updateArticle', wxC.updateArticle)
 
+router.post('/api/v1.0/login', uB.Login)
+router.get('/api/v1.0/getUserInfo', uB.getUserInfo)
+
+router.get('/frontEndLogger', async (ctx) => {
+    console.log(ctx.request.body)
+})
 router.get('/index', async function (ctx) {
     await ctx.render('index')
 })

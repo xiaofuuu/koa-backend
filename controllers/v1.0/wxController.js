@@ -25,6 +25,7 @@ wxC.getWxUserInfo = async function (ctx) {
 
 // 查询学生
 wxC.findStudentById = async (ctx) => {
+    
     let s_id = ctx.request.query.s_id;
 
     if (!s_id) {

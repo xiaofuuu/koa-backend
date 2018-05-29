@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "bcrypt": "^2.0.1",
+    "jsonwebtoken": "^8.2.1",
     "koa": "^2.5.1",
     "koa-body": "^2.5.0",
     "koa-cors": "^0.0.16",
+    "koa-jwt": "^3.3.2",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.3",
