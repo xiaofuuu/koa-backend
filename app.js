@@ -15,20 +15,24 @@ app.use(serve(__dirname + '/public'));
 // views
 app.use(views(path.resolve(__dirname, './views')))
 
-// app.use(function (ctx, next) {
-//     return next().catch((err) => {
-//         if (401 == err.status) {
-//             ctx.status = 401;
-//             ctx.body = 'Protected resource, use Authorization header to get access\n';
-//         } else {
-//             throw err;
-//         }
-//     });
-// })
+app.use(function (ctx, next) {
+    return next().catch((err) => {
 
-// app.use(jwt({ secret: 'shared-secret' }).unless({
-//     path: [/\/register/, /\/login/],
-// }));
+        if (401 == err.status) {
+            ctx.status = 401;
+            ctx.body = {
+                msg: 'token失效',
+                resolve: -999
+            };
+        } else {
+            throw err;
+        }
+    });
+})
+
+app.use(jwt({ secret: 'shared-secret' }).unless({
+    path: [/\/register/, /\/login/],
+}));
 
 // middleware
 app.use(logger())
