@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>编辑器</title>
+  <style>
+    .container{
+      width: 375px;
+      height: 540px;
+    }
+    .w-e-text-container, .w-e-text{
+      width: 375px;
+      height: 540px !important;
+      overflow: hidden !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="div1">
+      <!-- <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p> -->
+    </div>
+  </div>
+  <p style="margin-top: 40px;">字数：<span class="f"></span></p>
+  <p>注: 不要超屏录入</p>
+  <button id="btn">保存</button>
+  <p class="state"></p>
+  <script src="https://cdn.bootcss.com/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript" src="wangEditor-3.1.1/release/wangEditor.js"></script>
+  <script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#div1')
+    editor.customConfig.menus = [
+        'fontSize',
+        'bold',
+        'italic',
+        'foreColor',
+        'image',
+    ]
+    editor.customConfig.onchange = function (html) {
+        $('.f').html(editor.txt.text().length)
+    }
+    editor.create()
+
+    $('#btn').click(function(){
+      if(false){
+        alert('文字限制在400字以内！')
+      } else {
+        $.ajax({
+          type: 'PUT',
+          url: `/api/v1.0/updateArticle?a_id=${2}`,
+          data: {
+            title: 'hello world',
+            content: editor.txt.html()
+          },
+          success: function(res){
+            $('.state').html(res.msg)
+          }
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>

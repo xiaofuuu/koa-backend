@@ -7,11 +7,16 @@ const wxC = require('../controllers/v1.0/wxController');
 router.post('/api/v1.0/getWxUserInfo', wxC.getWxUserInfo)
 router.get('/api/v1.0/findStudentById', wxC.findStudentById)
 router.post('/api/v1.0/addStudent', wxC.addStudent)
+router.post('/api/v1.0/saveArticleContent', wxC.saveArticleContent)
+router.get('/api/v1.0/findArticleById', wxC.findArticleById)
+router.put('/api/v1.0/updateArticle', wxC.updateArticle)
 
 router.get('/index', async function (ctx) {
     await ctx.render('index')
 })
-
+router.get('/page', async function (ctx) {
+    await ctx.render('page')
+})
 // upload 
 router.post('/api/v1.0/upload', async (ctx, next) => {
 

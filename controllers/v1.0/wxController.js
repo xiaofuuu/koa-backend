@@ -95,4 +95,62 @@ wxC.addStudent = async (ctx) => {
     }
 }
 
+//
+wxC.saveArticleContent = async (ctx) => {
+    let content = ctx.request.body.content
+    let title = ctx.request.body.title
+    
+    let data = await sql('insert into article(content,title) values(?, ?)', [content, title]).catch(error => {
+        ctx.body = {
+            msg: '参数错误',
+            res_code: -200
+        }
+    })
+
+    if (data) {
+        ctx.body = {
+            msg: '添加成功',
+            res_code: 200
+        }
+    }
+}
+
+//
+wxC.findArticleById = async (ctx) => {
+    let aId = ctx.request.query.a_id
+
+    let data = await sql('select * from article where a_id = ?', [aId]).catch(error => {
+        ctx.body = {
+            msg: '参数错误',
+            res_code: -200
+        }
+    })
+
+    if (data) {
+        ctx.body = {
+            msg: data.length > 1 ? data : data[0],
+            res_code: 200
+        }
+    }
+}
+//
+wxC.updateArticle = async (ctx) => {
+    let aId = ctx.request.query.a_id
+    let content = ctx.request.body.content
+    let title = ctx.request.body.title
+
+    let data = await sql('update article set content = ?, title = ? where a_id = ?', [content, title, aId]).catch(error => {
+        ctx.body = {
+            msg: '参数错误',
+            res_code: -200
+        }
+    })
+
+    if (data) {
+        ctx.body = {
+            msg: '更新成功',
+            res_code: 200
+        }
+    }
+}
 module.exports = wxC;

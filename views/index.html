@@ -14,7 +14,7 @@
       }
       .layout{
         color: #000;
-        font-size: 0.5rem;
+        font-size: 0.43rem;
         padding: 0.3rem;
         box-sizing: border-box;
         background: rgb(219,202,179);
@@ -28,11 +28,13 @@
         text-align: justify;
       }
       .layout--page{
-        position: absolute;
+        position: fixed;
         width: 100%;
-        bottom: 0.2rem;
+        bottom: 0;
         left: 0;
         text-align: center;
+        padding-bottom: 5px;
+        background: rgb(219,202,179);
       }
     </style>
 </head>
@@ -67,34 +69,34 @@
             
             layout.on('touchend', function(e){
               var end_point = e.originalEvent.changedTouches[0].pageX
-              if (start_point - end_point > 40) {
+              if (start_point - end_point > 10) {
                 a_index ++
                 if(a_index < articleNum + 1){
-                  article.animate({
-                    marginLeft: - screenWidth + 'px'
-                  }, {
-                    duration: duration,
-                    complete: function () {
-                      article.css({"margin-left": screenWidth + 'px'})                
-                      getArticle(a_index)
-                    }
-                  })
+                  // article.animate({
+                  //   marginLeft: - screenWidth + 'px'
+                  // }, {
+                  //   duration: duration,
+                  //   complete: function () {
+                  //     article.css({"margin-left": screenWidth + 'px'})                
+                  //   }
+                  // })
+                  getArticle(a_index)
                 } else {
                   alert('已经是最后一页了～')
                   a_index = articleNum                  
                 }
-              } else if(start_point - end_point < -40) {
+              } else if(start_point - end_point < -10) {
                 a_index --
                 if(a_index > 0){
-                  article.animate({
-                    marginLeft: screenWidth + 'px'
-                  }, {
-                    duration: duration,
-                    complete: function () {
-                      article.css({"margin-left": - screenWidth + 'px'})                
-                      getArticle(a_index)
-                    }
-                  })
+                  // article.animate({
+                  //   marginLeft: screenWidth + 'px'
+                  // }, {
+                  //   duration: duration,
+                  //   complete: function () {
+                  //     article.css({"margin-left": - screenWidth + 'px'})                
+                  //   }
+                  // })
+                  getArticle(a_index)
                 } else {
                   a_index = 1                  
                 }
@@ -103,16 +105,17 @@
 
             function getArticle (v) {
               $.ajax({
-                url: `./${v}.txt`,
+                url: `/api/v1.0/findArticleById?a_id=${v}`,
+                cache: true
               })
               .done(function(data) {
-                article.html(data)
+                article.html(data.msg.content)
                 page.html(v)
-                article.animate({
-                  marginLeft: '0'
-                }, {
-                  duration: duration
-                })
+                // article.animate({
+                //   marginLeft: '0'
+                // }, {
+                //   duration: duration
+                // })
               });
             }
         })

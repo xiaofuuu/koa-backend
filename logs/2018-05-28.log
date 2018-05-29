@@ -1,0 +1,180 @@
+[2018-05-28T15:34:07.508] [ERROR] default - { Error: ER_NO_DEFAULT_FOR_FIELD: Field 'a_id' doesn't have a default value
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlMessage: 'Field \'a_id\' doesn\'t have a default value',
+  sqlState: 'HY000',
+  index: 0,
+  sql: 'insert into article(content) values(NULL)' }
+[2018-05-28T15:34:49.041] [ERROR] default - { Error: ER_BAD_NULL_ERROR: Column 'a_id' cannot be null
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_BAD_NULL_ERROR',
+  errno: 1048,
+  sqlMessage: 'Column \'a_id\' cannot be null',
+  sqlState: '23000',
+  index: 0,
+  sql: 'insert into article(a_id, content) values(NULL, NULL)' }
+[2018-05-28T15:36:06.616] [ERROR] default - { Error: ER_NO_DEFAULT_FOR_FIELD: Field 'a_id' doesn't have a default value
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlMessage: 'Field \'a_id\' doesn\'t have a default value',
+  sqlState: 'HY000',
+  index: 0,
+  sql: 'insert into article(content) values(NULL)' }
+[2018-05-28T15:39:57.715] [ERROR] default - { Error: ER_DATA_TOO_LONG: Data too long for column 'content' at row 1
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Ping.onOperationComplete [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Ping.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_DATA_TOO_LONG',
+  errno: 1406,
+  sqlMessage: 'Data too long for column \'content\' at row 1',
+  sqlState: '22001',
+  index: 0,
+  sql: 'insert into article(content) values(\'<p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p><p><br></p>\')' }
+[2018-05-28T15:45:59.276] [ERROR] default - { Error: ER_DUP_ENTRY: Duplicate entry '1' for key 'PRIMARY'
+    at Query.Sequence._packetToError (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+    --------------------
+    at Protocol._enqueue (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:208:25)
+    at /Users/kinhajimefuku/workspace/koa-backend/mysql-connect.js:22:24
+    at Handshake.onConnect [as _callback] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/kinhajimefuku/workspace/koa-backend/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at TCP.onread (net.js:597:20)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'1\' for key \'PRIMARY\'',
+  sqlState: '23000',
+  index: 0,
+  sql: 'insert into article(content,title) values(\'<p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p><p><br></p>\', \'hello world\')' }
