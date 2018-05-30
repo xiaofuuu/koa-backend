@@ -6,7 +6,7 @@ const wxC = require('../controllers/v1.0/wxController')
 const uB = require('../controllers/v1.0/userBackend')
 
 router.post('/api/v1.0/getWxUserInfo', wxC.getWxUserInfo)
-router.get('/api/v1.0/findStudentById', wxC.findStudentById)
+router.get('/api/v1.0/findAllStudent', wxC.findAllStudent)
 router.post('/api/v1.0/addStudent', wxC.addStudent)
 router.post('/api/v1.0/saveArticleContent', wxC.saveArticleContent)
 router.get('/api/v1.0/findArticleById', wxC.findArticleById)

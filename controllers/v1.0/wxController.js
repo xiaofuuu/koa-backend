@@ -3,6 +3,7 @@ const rp = require('request-promise')
 const request = require('request')
 const logger = require('../../logger')
 const sql = require('../../mysql-connect')
+const base = require('../../utils/base')
 
 wxC.getWxUserInfo = async function (ctx) {
     let data = await request({
@@ -14,7 +15,7 @@ wxC.getWxUserInfo = async function (ctx) {
         }
         return body
     })
-    
+
     if (data) {
         ctx.body = {
             msg: data,
@@ -24,24 +25,27 @@ wxC.getWxUserInfo = async function (ctx) {
 }
 
 // 查询学生
-wxC.findStudentById = async (ctx) => {
-    
-    let s_id = ctx.request.query.s_id;
-
-    if (!s_id) {
+wxC.findAllStudent = async (ctx) => {
+    let checkResult = await base.checkToken(ctx.cookie.token).catch(err => {
         ctx.body = {
-            msg: '参数错误',
-            res_code: 200
+            msg: 'token错误',
+            res_code: -1
         }
-        return false;
+    }), data
+
+    if (checkResult) {
+        data = await sql('select * from student').catch(error => {
+            ctx.body = {
+                msg: '参数错误',
+                res_code: -200
+            }
+        })
+    } else {
+        ctx.body = {
+            msg: 'token错误',
+            res_code: -1
+        }
     }
-
-    let data = await sql('select * from student where s_id = ?', [s_id]).catch(error => {
-        ctx.body = {
-            msg: '参数错误',
-            res_code: -200
-        }
-    })
 
     if (data) {
         ctx.body = {
@@ -100,7 +104,7 @@ wxC.addStudent = async (ctx) => {
 wxC.saveArticleContent = async (ctx) => {
     let content = ctx.request.body.content
     let title = ctx.request.body.title
-    
+
     let data = await sql('insert into article(content,title) values(?, ?)', [content, title]).catch(error => {
         ctx.body = {
             msg: '参数错误',

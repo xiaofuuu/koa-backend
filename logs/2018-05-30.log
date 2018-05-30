@@ -1,0 +1,117 @@
+[2018-05-30T12:06:51.783] [ERROR] default - { JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/jsonwebtoken/verify.js:39:17)
+    at wxC.findStudentById (/Users/kinhajimefuku/workspace/koa-backend/controllers/v1.0/wxController.js:30:9)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:45:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-body/index.js:98:14
+    at <anonymous> name: 'JsonWebTokenError', message: 'jwt must be provided' }
+[2018-05-30T12:52:36.349] [ERROR] default - { TokenExpiredError: jwt expired
+    at Object.module.exports [as verify] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/jsonwebtoken/verify.js:126:19)
+    at Promise (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:8:9)
+    at new Promise (<anonymous>)
+    at Object.base.checkToken (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:7:10)
+    at wxC.findAllStudent (/Users/kinhajimefuku/workspace/koa-backend/controllers/v1.0/wxController.js:29:34)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:45:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:21:13
+    at Generator.next (<anonymous>)
+    at step (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:191)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:451
+    at new Promise (<anonymous>)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:99
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:25:19
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 1970-01-01T00:00:10.000Z }
+[2018-05-30T12:53:09.911] [ERROR] default - { TokenExpiredError: jwt expired
+    at Object.module.exports [as verify] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/jsonwebtoken/verify.js:126:19)
+    at Promise (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:8:9)
+    at new Promise (<anonymous>)
+    at Object.base.checkToken (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:7:10)
+    at wxC.findAllStudent (/Users/kinhajimefuku/workspace/koa-backend/controllers/v1.0/wxController.js:29:34)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:45:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:21:13
+    at Generator.next (<anonymous>)
+    at step (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:191)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:451
+    at new Promise (<anonymous>)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:99
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:25:19
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 1970-01-01T00:00:10.000Z }
+[2018-05-30T12:53:39.137] [ERROR] default - { TokenExpiredError: jwt expired
+    at Object.module.exports [as verify] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/jsonwebtoken/verify.js:126:19)
+    at Promise (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:8:9)
+    at new Promise (<anonymous>)
+    at Object.base.checkToken (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:7:10)
+    at wxC.findAllStudent (/Users/kinhajimefuku/workspace/koa-backend/controllers/v1.0/wxController.js:29:34)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:45:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:21:13
+    at Generator.next (<anonymous>)
+    at step (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:191)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:451
+    at new Promise (<anonymous>)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:99
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:25:19
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 1970-01-01T00:00:10.000Z }
+[2018-05-30T12:53:54.253] [ERROR] default - { TokenExpiredError: jwt expired
+    at Object.module.exports [as verify] (/Users/kinhajimefuku/workspace/koa-backend/node_modules/jsonwebtoken/verify.js:126:19)
+    at Promise (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:8:9)
+    at new Promise (<anonymous>)
+    at Object.base.checkToken (/Users/kinhajimefuku/workspace/koa-backend/utils/base.js:7:10)
+    at wxC.findAllStudent (/Users/kinhajimefuku/workspace/koa-backend/controllers/v1.0/wxController.js:29:34)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:45:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:44:32)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:21:13
+    at Generator.next (<anonymous>)
+    at step (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:191)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:451
+    at new Promise (<anonymous>)
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:7:99
+    at /Users/kinhajimefuku/workspace/koa-backend/node_modules/koa-cookie/index.js:25:19
+    at dispatch (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/kinhajimefuku/workspace/koa-backend/node_modules/koa/node_modules/koa-compose/index.js:43:18)
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 1970-01-01T00:00:10.000Z }
