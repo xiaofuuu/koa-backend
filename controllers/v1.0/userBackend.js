@@ -19,7 +19,7 @@ userBackend.Login = async (ctx) => {
     msg: {
       token: jwt.sign({
         data: user,
-        exp: 10 || Math.floor(Date.now() / 1000) + (60 * 60)
+        exp: Math.floor(Date.now() / 1000) + (60 * 60)
       }, 'shared-secret')
     },
     rea_code: 200
