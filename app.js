@@ -11,6 +11,13 @@ const app = module.exports = new Koa();
 
 const router = require('./routes');
 
+const options = {
+    origin: "http://localhost:9090",
+    credentials: true
+};
+
+const port = 8999
+
 app.use(serve(__dirname + '/public'));
 // views
 app.use(views(path.resolve(__dirname, './views')))
@@ -37,12 +44,13 @@ app.use(jwt({ secret: 'shared-secret' }).unless({
 // middleware
 app.use(logger())
 // CORS
-app.use(cors())
+app.use(cors(options))
 app.use(koaBody())
 
 // route definitions
 app.use(router.routes())
 
-app.listen(8999, function () {
+app.listen(port, function () {
     console.log('Server is running ' + emoji.get('coffee') + '...');
+    console.log('PORT: ' + port);
 });

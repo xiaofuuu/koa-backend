@@ -6,8 +6,14 @@ const userBackend = {}
 
 userBackend.Login = async (ctx) => {
   let user = {}
-  user.username = JSON.parse(ctx.request.body).username
-  user.password = JSON.parse(ctx.request.body).password
+  user.username = ctx.request.body.username
+  user.password = ctx.request.body.password
+  if (!user.username || !user.password) {
+    ctx.body = {
+      msg: '请输入用户名或密码～',
+      rs_code: -1
+    }
+  }
 
   ctx.body = {
     msg: {
