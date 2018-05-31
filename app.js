@@ -3,6 +3,7 @@ const koaBody = require('koa-body');
 const views = require('koa-views');
 const serve = require('koa-static');
 const cors = require('koa-cors');
+const convert = require('koa-convert');
 const cookie = require('koa-cookie').default
 const path = require('path');
 const Koa = require('koa');
@@ -43,7 +44,7 @@ app.use(views(path.resolve(__dirname, './views')))
 // middleware
 app.use(logger())
 // CORS
-app.use(cors(options))
+app.use(convert(cors(options)))
 app.use(koaBody())
 app.use(cookie())
 // console.log(cookie)
