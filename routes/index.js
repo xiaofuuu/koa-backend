@@ -19,7 +19,11 @@ router.get('/frontEndLogger', async (ctx) => {
     console.log(ctx.request.body)
 })
 router.get('/index', async function (ctx) {
-    await ctx.render('index')
+    if(ctx.request.query.type === '1'){
+        await ctx.render('index', {type: 1})
+    } else {
+        await ctx.render('index', {type: 2})
+    }
 })
 router.get('/page', async function (ctx) {
     await ctx.render('page')

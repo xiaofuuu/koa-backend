@@ -340,7 +340,7 @@ debug@*, debug@3.1.0, debug@^3.1.0, debug@~3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@2, debug@^2.1.2, debug@^2.2.0, debug@^2.6.3:
+debug@2, debug@^2.1.2, debug@^2.2.0, debug@^2.6.1, debug@^2.6.3:
   version "2.6.9"
   resolved "http://registry.npm.taobao.org/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -415,6 +415,10 @@ editorconfig@^0.13.2:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+ejs@^2.5.7:
+  version "2.6.1"
+  resolved "http://registry.npm.taobao.org/ejs/download/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
 
 error-inject@~1.0.0:
   version "1.0.0"
@@ -981,6 +985,14 @@ koa-cookie@^1.0.0:
 koa-cors@^0.0.16:
   version "0.0.16"
   resolved "http://registry.npm.taobao.org/koa-cors/download/koa-cors-0.0.16.tgz#98107993a7909e34c042986c5ec6156d77f3432e"
+
+koa-ejs@^4.1.1:
+  version "4.1.1"
+  resolved "http://registry.npm.taobao.org/koa-ejs/download/koa-ejs-4.1.1.tgz#5cf021bb17a855e461ea56825ffdc42d3eadb5dd"
+  dependencies:
+    debug "^2.6.1"
+    ejs "^2.5.7"
+    mz "^2.6.0"
 
 koa-is-json@^1.0.0:
   version "1.0.0"

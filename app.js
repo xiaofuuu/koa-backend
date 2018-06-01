@@ -7,21 +7,28 @@ const convert = require('koa-convert');
 const cookie = require('koa-cookie').default
 const path = require('path');
 const Koa = require('koa');
+const ejs = require('koa-ejs');
 const emoji = require('node-emoji')
 const app = module.exports = new Koa();
 
 const router = require('./routes');
 
 const options = {
-    origin: "http://localhost:9090",
+    origin: 'http://localhost:9090',
     credentials: true
 };
 
 const port = 8999
 
+ejs(app, {
+    root: path.join(__dirname, './views'),
+    layout: false,
+    viewExt: 'html',
+    cache: false,
+    debug: true
+});
+
 app.use(serve(__dirname + '/public'));
-// views
-app.use(views(path.resolve(__dirname, './views')))
 
 // app.use(function (ctx, next) {
 //     return next().catch((err) => {
