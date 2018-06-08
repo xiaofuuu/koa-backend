@@ -18,6 +18,9 @@ router.get('/api/v1.0/getUserInfo', uB.getUserInfo)
 router.get('/frontEndLogger', async (ctx) => {
     console.log(ctx.request.body)
 })
+router.get('/about', async (ctx) => {
+    await ctx.render('about')
+})
 router.get('/index', async function (ctx) {
     if(ctx.request.query.type === '1'){
         await ctx.render('index', {type: 1})

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="https://cdn.bootcss.com/bodymovin/4.13.0/bodymovin.min.js"></script>
+  <script>
+    window.onload = function(){
+      bodymovin.loadAnimation({
+        container: document.getElementById('app'), // 渲染动画的 dom 元素
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        path: 'play1_data.json'
+      })
+    }
+    function clear(id) {
+
+    }
+  </script>
+</body>
+
+</html>·

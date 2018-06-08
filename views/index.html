@@ -95,6 +95,20 @@
       width: 100%;
     }
   </style>
+  <script>
+    function detectOrient() {
+      if (window.innerHeight >= window.innerWidth) {
+        // 竖屏
+        console.log('竖屏')
+      } else {
+        // 横屏 
+        console.log('横屏')
+      }
+    }
+    detectOrient();
+    window.addEventListener('resize', detectOrient);
+
+  </script>
 </head>
 
 <body>
@@ -182,8 +196,8 @@
             if (a_index < pageArr.length) {
               article.animate({
                 left: - $(window).width() + 'px'
-              }, 200, function() {
-                article.css({left: $(window).width() + 'px'})
+              }, 200, function () {
+                article.css({ left: $(window).width() + 'px' })
                 article.animate({
                   left: 0
                 }, 200)
@@ -198,8 +212,8 @@
             if (a_index > 0) {
               article.animate({
                 left: $(window).width() + 'px'
-              }, 200, function() {
-                article.css({left: -$(window).width() + 'px'})
+              }, 200, function () {
+                article.css({ left: -$(window).width() + 'px' })
                 article.animate({
                   left: 0
                 }, 200)

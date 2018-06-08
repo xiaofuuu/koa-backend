@@ -8,7 +8,7 @@ const base = require('../../utils/base')
 wxC.getWxUserInfo = async function (ctx) {
     let data = await request({
         method: 'get',
-        uri: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx8b3bc1df5196160a&secret=38d196bb42e0114c9feb668718fa61f1'
+        uri: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx8b3bc1df5196160a&secret=e9c1a33f83ba4d34f7cf67c506becea0'
     }, function (error, response, body) {
         if (error) {
             console.error('upload failed:');
