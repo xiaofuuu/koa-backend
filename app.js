@@ -10,6 +10,7 @@ const Koa = require('koa');
 const ejs = require('koa-ejs');
 const emoji = require('node-emoji')
 const app = module.exports = new Koa();
+const IO = require('koa-socket');
 
 const router = require('./routes');
 
@@ -30,31 +31,27 @@ ejs(app, {
 
 app.use(serve(__dirname + '/public'));
 
-// app.use(function (ctx, next) {
-//     return next().catch((err) => {
-//         if (401 == err.status) {
-//             ctx.status = 401;
-//             ctx.body = {
-//                 msg: 'token失效',
-//                 resolve: -999
-//             };
-//         } else {
-//             throw err;
-//         }
-//     });
-// })
-
-// app.use(jwt({ secret: 'shared-secret' }).unless({
-//     path: [/\/register/, /\/login/],
-// }));
-
 // middleware
 app.use(logger())
 // CORS
 app.use(convert(cors(options)))
 app.use(koaBody())
 app.use(cookie())
-// console.log(cookie)
+
+const io = new IO({
+    ioOptions: {
+        pingTimeout: 10000,
+        pingInterval: 5000,
+    },
+});
+
+// 注入应用
+io.attach(app);
+
+io.on('connection', async (ctx, data) => {
+    console.log('server is success!')
+    ctx.socket.emit('message', 'hello world');
+})
 
 // route definitions
 app.use(router.routes())

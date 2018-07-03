@@ -15,14 +15,13 @@ userBackend.Login = async (ctx) => {
       rs_code: -1
     }
   }
+  ctx.cookies.set('token', jwt.sign({
+    data: user,
+    exp: Math.floor(Date.now() / 1000) + (60 * 60)
+  }, 'shared-secret'));
 
   ctx.body = {
-    msg: {
-      token: jwt.sign({
-        data: user,
-        exp: Math.floor(Date.now() / 1000) + (60 * 60)
-      }, 'shared-secret')
-    },
+    msg: 'ok',
     rea_code: 200
   }
 
