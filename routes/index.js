@@ -1,6 +1,5 @@
 const fs = require('fs');
-const os = require('os');
-
+const path = require('path')
 const router = require('koa-router')()
 const wxC = require('../controllers/v1.0/wxController')
 const uB = require('../controllers/v1.0/userBackend')
@@ -11,12 +10,12 @@ router.post('/api/v1.0/addStudent', wxC.addStudent)
 router.post('/api/v1.0/saveArticleContent', wxC.saveArticleContent)
 router.get('/api/v1.0/findArticleById', wxC.findArticleById)
 router.put('/api/v1.0/updateArticle', wxC.updateArticle)
-
 router.post('/api/v1.0/login', uB.Login)
 router.get('/api/v1.0/getUserInfo', uB.getUserInfo)
-
 router.get('/frontEndLogger', async (ctx) => {
-    console.log(ctx.request.body)
+    ctx.body = {
+        msg: 'ok'
+    }
 })
 router.get('/about', async (ctx) => {
     await ctx.render('about')
@@ -31,18 +30,17 @@ router.get('/index', async function (ctx) {
 router.get('/page', async function (ctx) {
     await ctx.render('page')
 })
-// upload 
 router.post('/api/v1.0/upload', async (ctx, next) => {
-
     if ('POST' != ctx.method) return await next();
-
+    if (!ctx.request.body.files) {
+        return ctx.body = "上传失败！"
+    }
     const file = ctx.request.body.files.file;
     const reader = fs.createReadStream(file.path);
-    const stream = fs.createWriteStream(path.join(os.tmpdir(), Math.random().toString()));
+    let filePath = path.join(__dirname, '../public/upload/') + `/${file.name}`;
+    const stream = fs.createWriteStream(filePath);
     reader.pipe(stream);
     console.log('uploading %s -> %s', file.name, stream.path);
-
-    ctx.redirect('/index');
+    ctx.body = "上传成功！"
 })
-
 module.exports = router;

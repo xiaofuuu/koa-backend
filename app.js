@@ -15,7 +15,7 @@ const IO = require('koa-socket');
 const router = require('./routes');
 
 const options = {
-    origin: 'http://localhost:9090',
+    origin: 'http://localhost:3000',
     credentials: true
 };
 
@@ -35,7 +35,12 @@ app.use(serve(__dirname + '/public'));
 app.use(logger())
 // CORS
 app.use(convert(cors(options)))
-app.use(koaBody())
+app.use(koaBody({
+    multipart: true,
+    formidable: {
+        maxFileSize: 2000*1024*1024    // 设置上传文件大小最大限制，默认2M
+    }
+}));
 app.use(cookie())
 
 const io = new IO({
@@ -51,6 +56,10 @@ io.attach(app);
 io.on('connection', async (ctx, data) => {
     console.log('server is success!')
     ctx.socket.emit('message', 'hello world');
+})
+
+io.on('join', async (ctx, data) => {
+    console.log(data.message)
 })
 
 // route definitions
