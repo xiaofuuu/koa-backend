@@ -3,8 +3,8 @@ const logger = require('./logger');
 
 let pool = mysql.createPool({
     host: 'localhost',
-    user: 'root',
-    password: 'admin123',
+    user: 'guest',
+    password: 'guest123',
     database: 'my_local_db',
     debug: false
 });
