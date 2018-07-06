@@ -120,8 +120,23 @@ wxC.saveArticleContent = async (ctx) => {
     }
 }
 
+var get_client_ip = function(req) {
+    var ip = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
+    if(ip.split(',').length>0){
+        ip = ip.split(',')[0]
+    }
+    return ip;
+};
+
 //
 wxC.findArticleById = async (ctx) => {
+    let ip = get_client_ip(ctx.request)
+
+    logger.debug('==>get client ip', ip)
     let aId = ctx.request.query.a_id
 
     let data = await sql('select * from article where a_id = ?', [aId]).catch(error => {
