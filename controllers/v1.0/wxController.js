@@ -47,11 +47,9 @@ wxC.findAllStudent = async (ctx) => {
         }
     }
 
-    if (data) {
-        ctx.body = {
-            msg: data.length == 1 ? data[0] : data,
-            res_code: 200
-        }
+    ctx.body = {
+        msg: data,
+        res_code: 200
     }
 }
 
