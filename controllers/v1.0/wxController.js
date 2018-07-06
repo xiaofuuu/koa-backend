@@ -4,7 +4,6 @@ const request = require('request')
 const logger = require('../../logger')
 const sql = require('../../mysql-connect')
 const base = require('../../utils/base')
-
 wxC.getWxUserInfo = async function (ctx) {
     let data = await request({
         method: 'get',
@@ -23,7 +22,6 @@ wxC.getWxUserInfo = async function (ctx) {
         }
     }
 }
-
 // 查询学生
 wxC.findAllStudent = async (ctx) => {
     let checkResult = await base.checkToken(ctx.cookie.token).catch(err => {
@@ -52,7 +50,6 @@ wxC.findAllStudent = async (ctx) => {
         res_code: 200
     }
 }
-
 // 添加学生
 wxC.addStudent = async (ctx) => {
 
@@ -97,7 +94,6 @@ wxC.addStudent = async (ctx) => {
         }
     }
 }
-
 //
 wxC.saveArticleContent = async (ctx) => {
     let content = ctx.request.body.content
@@ -117,7 +113,6 @@ wxC.saveArticleContent = async (ctx) => {
         }
     }
 }
-
 var get_client_ip = function(req) {
     var ip = req.headers['x-forwarded-for'] ||
         req.ip ||
@@ -129,7 +124,6 @@ var get_client_ip = function(req) {
     }
     return ip;
 };
-
 //
 wxC.findArticleById = async (ctx) => {
     let ip = get_client_ip(ctx.request)

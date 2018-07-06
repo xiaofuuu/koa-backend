@@ -1,9 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const logger = require('../../logger')
-
 const userBackend = {}
-
 userBackend.Login = async (ctx) => {
   let user = {}
   user.username = ctx.request.body.username
@@ -28,7 +26,6 @@ userBackend.Login = async (ctx) => {
   // bcrypt.hash()
   // bcrypt.compare()
 }
-
 userBackend.getUserInfo = async (ctx) => {
   let token = ctx.request.header.authorization
 
@@ -50,5 +47,4 @@ userBackend.getUserInfo = async (ctx) => {
   });
 
 }
-
 module.exports = userBackend
