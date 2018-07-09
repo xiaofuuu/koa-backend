@@ -13,7 +13,7 @@ const app = module.exports = new Koa();
 const IO = require('koa-socket');
 const router = require('./routes');
 const options = {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:9090',
     credentials: true
 };
 const port = 8999
