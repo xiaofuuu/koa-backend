@@ -3,6 +3,7 @@ const path = require('path');
 const router = require('koa-router')();
 const wxC = require('../controllers/v1.0/wxController');
 const uB = require('../controllers/v1.0/userBackend');
+const simpleRouter = require('./simpleRouter');
 
 router.post('/api/v1.0/getWxUserInfo', wxC.getWxUserInfo);
 router.get('/api/v1.0/findAllStudent', wxC.findAllStudent);
@@ -43,4 +44,7 @@ router.post('/api/v1.0/upload', async (ctx, next) => {
   console.log('uploading %s -> %s', file.name, stream.path);
   ctx.body = "上传成功！";
 });
+
+router.use('/', simpleRouter.routes());
+
 module.exports = router;

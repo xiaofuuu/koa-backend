@@ -11,6 +11,7 @@ const ejs = require('koa-ejs');
 const emoji = require('node-emoji');
 const app = module.exports = new Koa();
 const router = require('./routes');
+const bodyParser = require('koa-bodyparser');
 const options = {
   origin: 'http://localhost:9090',
   credentials: true
@@ -34,7 +35,7 @@ app.use(koaBody({
     maxFileSize: 2000 * 1024 * 1024    // 设置上传文件大小最大限制，默认2M
   }
 }));
-
+app.use(bodyParser());
 app.use(cookie());
 // route definitions
 app.use(router.routes());
