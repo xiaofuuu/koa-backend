@@ -50,7 +50,7 @@ router.post('v1.0/set_date', async function getMoney(ctx) {
   };
 });
 
-router.get('/v1.0/video', function (req, res, next) {
+router.get('v1.0/video', function (req, res, next) {
   let path = 'http://koalareading-online.oss-cn-beijing.aliyuncs.com/summit/five.mp4';
   let stat = fs.statSync(path);
   let fileSize = stat.size;
@@ -89,7 +89,7 @@ router.get('/v1.0/video', function (req, res, next) {
 
 });
 
-router.get('/v1.0/getInfo', function (req, res, ndex) {
+router.get('v1.0/getInfo', function (req, res, ndex) {
   res.body = {
     msg: 'ok',
     res_code: 1
