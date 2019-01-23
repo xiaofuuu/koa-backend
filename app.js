@@ -8,6 +8,7 @@ const cookie = require('koa-cookie').default;
 const path = require('path');
 const Koa = require('koa');
 const ejs = require('koa-ejs');
+const range = require('koa-range');
 const emoji = require('node-emoji');
 const app = module.exports = new Koa();
 const router = require('./routes');
@@ -16,6 +17,7 @@ const options = {
   origin: 'http://localhost:9090',
   credentials: true
 };
+app.use(range);
 const port = 8999;
 ejs(app, {
   root: path.join(__dirname, './views'),
