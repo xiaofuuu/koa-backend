@@ -1,13 +1,13 @@
 const mysql = require('mysql');
-const logger = require('./logger');
+var log = require('log4js').getLogger("app");
 
 let pool = mysql.createPool({
-  host: '47.93.156.147',
-  user: 'www', // root
-  password: 'Koalareading123', // 12345678
-  database: 'summit',
+  host: '152.136.208.123',
+  user: 'root', // root
+  password: 'rlarlqhr02', // 12345678
+  database: 'financial_schema',
   debug: false,
-  port: '4406'
+  port: '3306'
 });
 
 let sql = async function (query, params) {
@@ -16,7 +16,7 @@ let sql = async function (query, params) {
 
       if (err) {
         reject(err);
-        logger.error(err);
+        log.error(err);
       }
 
       // Use the connection
@@ -27,7 +27,7 @@ let sql = async function (query, params) {
         // Handle error after the release.
         if (error) {
           reject(error);
-          logger.error(error);
+          log.error(error);
         }
 
         // Don't use the connection here, it has been returned to the pool.

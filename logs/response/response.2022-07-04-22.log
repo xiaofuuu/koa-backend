@@ -1,0 +1,56 @@
+[2022-07-04T22:16:14.262] [DEBUG] resLogger - 123123
+[2022-07-04T22:16:14.264] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/v1.0/upload
+request client ip:  ::1
+request body: 
+{}
+response time: 7
+response status: 200
+response body: 
+"上传成功！"
+*************** response log end ***************
+
+[2022-07-04T22:16:53.938] [DEBUG] resLogger - uploading 塔司考勤记录.xlsx -> /Users/jinjf/learning-space/koa-backend/public/upload//塔司考勤记录.xlsx
+[2022-07-04T22:16:53.939] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/v1.0/upload
+request client ip:  ::1
+request body: 
+{}
+response time: 11
+response status: 200
+response body: 
+"上传成功！"
+*************** response log end ***************
+
+[2022-07-04T22:17:06.452] [ERROR] resLogger - uploading 塔司考勤记录.xlsx -> /Users/jinjf/learning-space/koa-backend/public/upload//塔司考勤记录.xlsx
+[2022-07-04T22:17:06.454] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/v1.0/upload
+request client ip:  ::1
+request body: 
+{}
+response time: 15
+response status: 200
+response body: 
+"上传成功！"
+*************** response log end ***************
+
+[2022-07-04T22:20:33.020] [ERROR] resLogger - uploading 塔司考勤记录.xlsx -> /Users/jinjf/learning-space/koa-backend/public/upload//塔司考勤记录.xlsx
+[2022-07-04T22:20:33.021] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/v1.0/upload
+request client ip:  ::1
+request body: 
+{}
+response time: 19
+response status: 200
+response body: 
+"上传成功！"
+*************** response log end ***************
+

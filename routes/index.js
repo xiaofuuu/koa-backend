@@ -4,6 +4,7 @@ const router = require("koa-router")();
 const wxC = require("../controllers/v1.0/wxController");
 const uB = require("../controllers/v1.0/userBackend");
 const simpleRouter = require("./simpleRouter");
+var log = require('log4js').getLogger("resLogger");
 
 router.post("/api/v1.0/getWxUserInfo", wxC.getWxUserInfo);
 router.get("/api/v1.0/findAllStudent", wxC.findAllStudent);
@@ -32,7 +33,7 @@ router.get("/page", async function (ctx) {
   await ctx.render("page");
 });
 router.post("/api/v1.0/upload", async (ctx, next) => {
-  if ("POST" != ctx.method) return await next();
+  if ("POST" !== ctx.request.method) return await next();
   if (!ctx.request.files) {
     return (ctx.body = "上传失败！");
   }
@@ -41,7 +42,7 @@ router.post("/api/v1.0/upload", async (ctx, next) => {
   let filePath = path.join(__dirname, "../public/upload/") + `/${file.originalFilename}`;
   const stream = fs.createWriteStream(filePath);
   reader.pipe(stream);
-  console.log("uploading %s -> %s", file.originalFilename, stream.path);
+  log.error("uploading %s -> %s", file.originalFilename, stream.path)
   ctx.body = "上传成功！";
 });
 router.use("/simple-router", simpleRouter.routes());

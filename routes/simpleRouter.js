@@ -1,5 +1,5 @@
 const router = require('koa-router')();
-const logger = require('../logger');
+const log = require('log4js').getLogger("errorLogger");
 const sql = require('../mysql-connect');
 const redis = require("redis"),
   client = redis.createClient({db: 'db1', url: 'redis://47.93.156.147:6379/1'});
@@ -22,7 +22,7 @@ router.post('v1.0/set_date', async function getMoney(ctx) {
   let data = await sql('update summit_activity set startTime=?, endTime=?, publishState=? where id=?', [startTime,
     endTime, 0, id]).catch(
     err => {
-      logger.error(err);
+      log.error(ctx, err);
     });
   times.forEach(async (time, index) => {
     let data1 = await sql('update summit_activity_detail set startTime=? where activityId=? and id = ?',
@@ -30,17 +30,17 @@ router.post('v1.0/set_date', async function getMoney(ctx) {
         dateFormat(new Date(new Date(startTime).getTime() +
           time * 1000)), id, 145 + index]).catch(
       err => {
-        logger.error(err);
+        log.error(ctx, err);
       });
   });
   sql('truncate table teacher_summit_activity_subscribe;').catch(
-    err => logger.error(err));
+    err => log.error(ctx, err));
   sql('truncate table user_summit_activity_comment;').catch(
-    err => logger.error(err));
+    err => log.error(ctx, err));
   sql('truncate table user_summit_activity_record;').catch(
-    err => logger.error(err));
+    err => log.error(ctx, err));
   sql('truncate table user_summit_activity_tips;').catch(
-    err => logger.error(err));
+    err => log.error(ctx, err));
 
   client.flushdb(function (err, succeeded) {
     console.log(succeeded); // will be true if successfull

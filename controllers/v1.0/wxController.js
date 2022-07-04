@@ -1,7 +1,7 @@
 const wxC = {}
 const rp = require('request-promise')
 const request = require('request')
-const logger = require('../../logger')
+const log = require('log4js').getLogger("errorLogger");
 const sql = require('../../mysql-connect')
 const base = require('../../utils/base')
 wxC.getWxUserInfo = async function (ctx) {
@@ -56,7 +56,7 @@ wxC.addStudent = async (ctx) => {
     let req_params = ['s_name', 's_birth', 's_score', 'c_id']
 
     if (req_params.length == Object.keys(ctx.request.body).length && !req_params.every(item => item == ctx.request.body[item])) {
-        logger.error(ctx.request.body)
+        log.error(ctx, ctx.request.body)
         ctx.body = {
             msg: '参数错误',
             res_code: -1
@@ -65,7 +65,7 @@ wxC.addStudent = async (ctx) => {
     }
 
     if (isNaN(ctx.request.body.s_score) || isNaN(ctx.request.body.c_id)) {
-        logger.error('Error s_score: ' + ctx.request.body.s_score + ' ---- ' + 'c_id: ' + ctx.request.body.c_id)
+        log.error(ctx, 'Error s_score: ' + ctx.request.body.s_score + ' ---- ' + 'c_id: ' + ctx.request.body.c_id)
         ctx.body = {
             msg: '参数类型错误',
             res_code: -1
@@ -128,7 +128,7 @@ var get_client_ip = function(req) {
 wxC.findArticleById = async (ctx) => {
     let ip = get_client_ip(ctx.request)
 
-    logger.debug('==>get client ip', ip)
+    log.error(ctx, '==>get client ip', ip)
     let aId = ctx.request.query.a_id
 
     let data = await sql('select * from article where a_id = ?', [aId]).catch(error => {

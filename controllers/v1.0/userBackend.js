@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const logger = require('../../logger');
+const log = require('log4js').getLogger("errorLogger");
 const userBackend = {};
 userBackend.Login = async (ctx) => {
   let user = {};
@@ -12,6 +12,7 @@ userBackend.Login = async (ctx) => {
       rs_code: -1
     };
   }
+
   ctx.cookies.set('token', jwt.sign({
     data: user,
     exp: Math.floor(Date.now() / 1000) + (60 * 60)
@@ -30,7 +31,7 @@ userBackend.getUserInfo = async (ctx) => {
 
   jwt.verify(token.substring(7), 'shared-secret', function (err, decoded) {
     if (err) {
-      logger.error(err);
+      log.error(ctx, err);
     }
     if (!decoded) {
       ctx.body = {
