@@ -44,7 +44,6 @@ router.post("/api/v1.0/upload", async (ctx, next) => {
   console.log("uploading %s -> %s", file.originalFilename, stream.path);
   ctx.body = "上传成功！";
 });
-
-router.use("/", simpleRouter.routes());
+router.use("/simple-router", simpleRouter.routes());
 
 module.exports = router;

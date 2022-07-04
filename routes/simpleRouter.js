@@ -65,4 +65,5 @@ router.get('v1.0/getInfo', function (ctx) {
     res_code: 1
   };
 });
+
 module.exports = router;
