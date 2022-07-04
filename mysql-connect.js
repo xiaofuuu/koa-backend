@@ -2,10 +2,10 @@ const mysql = require('mysql');
 var log = require('log4js').getLogger("app");
 
 let pool = mysql.createPool({
-  host: '152.136.208.123',
-  user: 'root', // root
-  password: 'rlarlqhr02', // 12345678
-  database: 'financial_schema',
+  host: '',
+  user: '', // root
+  password: '', // 12345678
+  database: '',
   debug: false,
   port: '3306'
 });
