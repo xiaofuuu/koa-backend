@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 const log = require('log4js').getLogger("errorLogger");
-const sql = require('../mysql-connect');
+const sql = require('../database/mysql-connect');
 const redis = require("redis"),
   client = redis.createClient({db: 'db1', url: 'redis://47.93.156.147:6379/1'});
 const fs = require('fs');

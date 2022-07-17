@@ -1,3 +1,2 @@
-node_modules/
-public/ueditor/
-public/wangEditor-3.1.1/
+node_modules
+logs

@@ -72,7 +72,7 @@ var formatError = function (ctx, err, resTime) {
 //格式化请求日志
 var formatReqLog = function (req, resTime) {
   var logText = new String();
-  console.log(req)
+  
   var method = req.method;
   //访问方法
   logText += "request method: " + method + "\n";

@@ -13,6 +13,7 @@ router.post("/api/v1.0/saveArticleContent", wxC.saveArticleContent);
 router.get("/api/v1.0/findArticleById", wxC.findArticleById);
 router.put("/api/v1.0/updateArticle", wxC.updateArticle);
 router.post("/api/v1.0/login", uB.Login);
+router.post("/api/v1.0/regist", uB.Regist);
 router.get("/api/v1.0/getUserInfo", uB.getUserInfo);
 router.get("/frontEndLogger", async (ctx) => {
   ctx.body = {
